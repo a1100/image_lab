@@ -17,9 +17,9 @@ used_effects = []
 while true
 	 puts "Effect? Options: BW for black and white, INV for inverse, TINT for tint, RAND for random noise, MAX for maximizing a color, SUR for surprise colors, Q to quit, and DONE once you are finished applying effects." + ("\n") 
         effect = gets.downcase.chomp	
-	used_effects.push effect
 
         if effect == "bw"
+		used_effects.push "bw"
                 # code to make the image array black and white
 		img.each do |row|
         	row.each do |pixel|
@@ -30,6 +30,7 @@ while true
         end
 end
         elsif effect == "inv"
+		used_effects.push "inv"
                 # code to make the image array inverted colori
 		img.each do |row|
 			row.each do |pixel|
@@ -39,6 +40,7 @@ end
 		end
 end
        elsif effect == "rand"
+		used_effects.push "rand"
                 # code to random noise the image
 		img.each do |row|
 			row.each do |pixel|
@@ -48,6 +50,7 @@ end
 	end
 end
 	elsif effect == "tint"
+		used_effects.push "tint"
 		# code to tint the image
 		puts "Which tint color would you like? The options are red, yellow, green, turquoise, blue, and purple." ; tintcolor = gets.chomp.downcase
 			img.each do |row|
@@ -94,6 +97,7 @@ end
 		used_effects.push tintcolor
 
 	elsif effect == "sur"
+		used_effects.push "sur"
 		# code to change the background color
 		puts "Would you like blue, green, or red?" ; backcolor = gets.chomp.downcase
 		if backcolor == "blue"
@@ -130,6 +134,7 @@ end
 
 
 	elsif effect == "max"
+		used_effects.push "max"
 		# code to make the image a color
 		puts "Do you want to maximize the red, green, or blue?"
 		color = gets.chomp.downcase
